@@ -1,67 +1,99 @@
+Code Book
+=========
+
+This document describes the variables of the samsungAllData and samsungAllAggData files of the Getting and Cleaning Data project.
+
+  the source data is located in
+
+    https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+  
+samsungAllData.txt
+
+  We extracted all columns that contained "mean" or "std" in their name.  Variables were unaltered.
+  We added two columns, subject and activity, to associate each original data point
+  with its subject and the activity he/she was realizing when the data point was taken.
+
+  * read me.md: this file
+  * run_analysis.R: the R code that manipulates the data and extracts the cleaned data sets:
+    -samsungAllData.txt:
+      * all columns of the original file with mean or std within their names.
+      * subject: subject number (1..30) that realized an activity while the sample was taken.
+      * activity: name of the activity the subject was performing while the sample was taken.
+    -samsungAllAggData.txt:
+      Summary information of the samsungAllData.txt by subject/activity
+      * Same number of columns and in same positions.
+      * Each data point corresponds to the mean of all the observations of all data points
+        of the corresponding subject and activity of the original data set.
+  * CodeBook.md: Code book for the above files (the share the same code book as one is the summary of the other.
+  * samsungAllData.txt: described above.
+  * samsungAllAggData.txt: described above.
+
+
+
 We generated two data files from the Samsung dataset:
   *samsungAllDF.txt: All requested columns (all means and standard deviations), one sample per original sample
   *samsungAllAggDF.txt: All requested columns, one sample averages all oriignal samples from the same individual, the same activity
 
-Mean Variables
-  1	tBodyAcc-mean()-X
-2	tBodyAcc-mean()-Y
-3	tBodyAcc-mean()-Z
-41	tGravityAcc-mean()-X
-42	tGravityAcc-mean()-Y
-43	tGravityAcc-mean()-Z
-81	tBodyAccJerk-mean()-X
-82	tBodyAccJerk-mean()-Y
-83	tBodyAccJerk-mean()-Z
-121	tBodyGyro-mean()-X
-122	tBodyGyro-mean()-Y
-123	tBodyGyro-mean()-Z
-161	tBodyGyroJerk-mean()-X
-162	tBodyGyroJerk-mean()-Y
-163	tBodyGyroJerk-mean()-Z
-201	tBodyAccMag-mean()
-214	tGravityAccMag-mean()
-227	tBodyAccJerkMag-mean()
-240	tBodyGyroMag-mean()
-253	tBodyGyroJerkMag-mean()
-266	fBodyAcc-mean()-X
-267	fBodyAcc-mean()-Y
-268	fBodyAcc-mean()-Z
-294	fBodyAcc-meanFreq()-X
-295	fBodyAcc-meanFreq()-Y
-296	fBodyAcc-meanFreq()-Z
-345	fBodyAccJerk-mean()-X
-346	fBodyAccJerk-mean()-Y
-347	fBodyAccJerk-mean()-Z
-373	fBodyAccJerk-meanFreq()-X
-374	fBodyAccJerk-meanFreq()-Y
-375	fBodyAccJerk-meanFreq()-Z
-424	fBodyGyro-mean()-X
-425	fBodyGyro-mean()-Y
-426	fBodyGyro-mean()-Z
-452	fBodyGyro-meanFreq()-X
-453	fBodyGyro-meanFreq()-Y
-454	fBodyGyro-meanFreq()-Z
-503	fBodyAccMag-mean()
-513	fBodyAccMag-meanFreq()
-516	fBodyBodyAccJerkMag-mean()
-526	fBodyBodyAccJerkMag-meanFreq()
-529	fBodyBodyGyroMag-mean()
-539	fBodyBodyGyroMag-meanFreq()
-542	fBodyBodyGyroJerkMag-mean()
-552	fBodyBodyGyroJerkMag-meanFreq()
-555	angle(tBodyAccMean,gravity)
-556	angle(tBodyAccJerkMean),gravityMean)
-557	angle(tBodyGyroMean,gravityMean)
-558	angle(tBodyGyroJerkMean,gravityMean)
-559	angle(X,gravityMean)
-560	angle(Y,gravityMean)
-561	angle(Z,gravityMean)
+  *Mean Variables
+    - 1 tBodyAcc-mean()-X
+    - 2 tBodyAcc-mean()-Y
+    - 3 tBodyAcc-mean()-Z
+    - 41 tGravityAcc-mean()-X
+    - 42 tGravityAcc-mean()-Y
+    - 43 tGravityAcc-mean()-Z
+    - 81 tBodyAccJerk-mean()-X
+    - 82 tBodyAccJerk-mean()-Y
+    - 83 tBodyAccJerk-mean()-Z
+    - 121 tBodyGyro-mean()-X
+    - 122 tBodyGyro-mean()-Y
+    - 123 tBodyGyro-mean()-Z
+    - 161 tBodyGyroJerk-mean()-X
+    - 162 tBodyGyroJerk-mean()-Y
+    - 163 tBodyGyroJerk-mean()-Z
+    - 201 tBodyAccMag-mean()
+    - 214 tGravityAccMag-mean()
+    - 227 tBodyAccJerkMag-mean()
+    - 240 tBodyGyroMag-mean()
+    - 253 tBodyGyroJerkMag-mean()
+    - 266 fBodyAcc-mean()-X
+    - 267 fBodyAcc-mean()-Y
+    - 268 fBodyAcc-mean()-Z
+    - 294 fBodyAcc-meanFreq()-X
+    - 295 fBodyAcc-meanFreq()-Y
+    - 296 fBodyAcc-meanFreq()-Z
+    - 345 fBodyAccJerk-mean()-X
+    - 346 fBodyAccJerk-mean()-Y
+    - 347 fBodyAccJerk-mean()-Z
+    - 373 fBodyAccJerk-meanFreq()-X
+    - 374 fBodyAccJerk-meanFreq()-Y
+    - 375 fBodyAccJerk-meanFreq()-Z
+    - 424 fBodyGyro-mean()-X
+    - 425 fBodyGyro-mean()-Y
+    - 426 fBodyGyro-mean()-Z
+    - 452 fBodyGyro-meanFreq()-X
+    - 453 fBodyGyro-meanFreq()-Y
+    - 454 fBodyGyro-meanFreq()-Z
+    - 503 fBodyAccMag-mean()
+    - 513 fBodyAccMag-meanFreq()
+    - 516 fBodyBodyAccJerkMag-mean()
+    - 526 fBodyBodyAccJerkMag-meanFreq()
+    - 529 fBodyBodyGyroMag-mean()
+    - 539 fBodyBodyGyroMag-meanFreq()
+    - 542 fBodyBodyGyroJerkMag-mean()
+    - 552 fBodyBodyGyroJerkMag-meanFreq()
+    - 555 angle(tBodyAccMean,gravity)
+    - 556 angle(tBodyAccJerkMean),gravityMean)
+    - 557 angle(tBodyGyroMean,gravityMean)
+    - 558 angle(tBodyGyroJerkMean,gravityMean)
+    - 559 angle(X,gravityMean)
+    - 560 angle(Y,gravityMean)
+    - 561 angle(Z,gravityMean)
 
 Standard Deviation Variables
 ============================
 4	tBodyAcc-std()-X
 5	tBodyAcc-std()-Y
-6	tBodyAcc-std()-Z
+6	tBodyAcc-std()-
 44	tGravityAcc-std()-X
 45	tGravityAcc-std()-Y
 46	tGravityAcc-std()-Z
