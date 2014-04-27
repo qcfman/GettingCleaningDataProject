@@ -15,10 +15,10 @@ samsungAllData.txt
   with its subject and the activity he/she was realizing when the data point was taken.
 
   * Added variables
-    - subject: subject number (1..30) that realized an activity while the sample was taken.
-    - activity: name of the activity the subject was performing while the sample was taken.
+    - subject: subject number that realized an activity while the sample was taken (1..30).
+    - activity: name of the activity the subject was performing while the sample was taken (WALKING, WALKING UPSTAIRS, WALKING DOWNSTAIRS, SITTING, STANDING, LAYING).
    
-  * Mean Variables
+  * Mean Variables (all floating point numbers).  The number in each item corresponds to the column position in the original data set.
     - 1 tBodyAcc-mean()-X
     - 2 tBodyAcc-mean()-Y
     - 3 tBodyAcc-mean()-Z
@@ -73,7 +73,7 @@ samsungAllData.txt
     - 560 angle(Y,gravityMean)
     - 561 angle(Z,gravityMean)
 
-  * Standard Deviation Variables
+  * Standard Deviation Variables (all floating point numbers).  The number in each item corresponds to the column position in the original data set.
     - 4 tBodyAcc-std()-X
     - 5 tBodyAcc-std()-Y
     - 6 tBodyAcc-std()-
