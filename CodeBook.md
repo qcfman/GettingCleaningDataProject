@@ -4,6 +4,8 @@ Code Book
 This document describes the variables of the samsungAllData and samsungAllAggData files of the Getting and Cleaning Data project.  The source data is located in
 
     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+All variables retain their names from the original data set.
   
 samsungAllData.txt
 ------------------
