@@ -1,40 +1,22 @@
 Code Book
 =========
 
-This document describes the variables of the samsungAllData and samsungAllAggData files of the Getting and Cleaning Data project.
-
-  the source data is located in
+This document describes the variables of the samsungAllData and samsungAllAggData files of the Getting and Cleaning Data project.  The source data is located in
 
     https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
   
 samsungAllData.txt
+------------------
 
   We extracted all columns that contained "mean" or "std" in their name.  Variables were unaltered.
   We added two columns, subject and activity, to associate each original data point
   with its subject and the activity he/she was realizing when the data point was taken.
 
-  * read me.md: this file
-  * run_analysis.R: the R code that manipulates the data and extracts the cleaned data sets:
-    -samsungAllData.txt:
-      * all columns of the original file with mean or std within their names.
-      * subject: subject number (1..30) that realized an activity while the sample was taken.
-      * activity: name of the activity the subject was performing while the sample was taken.
-    -samsungAllAggData.txt:
-      Summary information of the samsungAllData.txt by subject/activity
-      * Same number of columns and in same positions.
-      * Each data point corresponds to the mean of all the observations of all data points
-        of the corresponding subject and activity of the original data set.
-  * CodeBook.md: Code book for the above files (the share the same code book as one is the summary of the other.
-  * samsungAllData.txt: described above.
-  * samsungAllAggData.txt: described above.
-
-
-
-We generated two data files from the Samsung dataset:
-  *samsungAllDF.txt: All requested columns (all means and standard deviations), one sample per original sample
-  *samsungAllAggDF.txt: All requested columns, one sample averages all oriignal samples from the same individual, the same activity
-
-  *Mean Variables
+  * Added variables
+    - subject: subject number (1..30) that realized an activity while the sample was taken.
+    - activity: name of the activity the subject was performing while the sample was taken.
+   
+  * Mean Variables
     - 1 tBodyAcc-mean()-X
     - 2 tBodyAcc-mean()-Y
     - 3 tBodyAcc-mean()-Z
@@ -89,38 +71,42 @@ We generated two data files from the Samsung dataset:
     - 560 angle(Y,gravityMean)
     - 561 angle(Z,gravityMean)
 
-Standard Deviation Variables
-============================
-4	tBodyAcc-std()-X
-5	tBodyAcc-std()-Y
-6	tBodyAcc-std()-
-44	tGravityAcc-std()-X
-45	tGravityAcc-std()-Y
-46	tGravityAcc-std()-Z
-84	tBodyAccJerk-std()-X
-85	tBodyAccJerk-std()-Y
-86	tBodyAccJerk-std()-Z
-124	tBodyGyro-std()-X
-125	tBodyGyro-std()-Y
-126	tBodyGyro-std()-Z
-164	tBodyGyroJerk-std()-X
-165	tBodyGyroJerk-std()-Y
-166	tBodyGyroJerk-std()-Z
-202	tBodyAccMag-std()
-215	tGravityAccMag-std()
-228	tBodyAccJerkMag-std()
-241	tBodyGyroMag-std()
-254	tBodyGyroJerkMag-std()
-269	fBodyAcc-std()-X
-270	fBodyAcc-std()-Y
-271	fBodyAcc-std()-Z
-348	fBodyAccJerk-std()-X
-349	fBodyAccJerk-std()-Y
-350	fBodyAccJerk-std()-Z
-427	fBodyGyro-std()-X
-428	fBodyGyro-std()-Y
-429	fBodyGyro-std()-Z
-504	fBodyAccMag-std()
-517	fBodyBodyAccJerkMag-std()
-530	fBodyBodyGyroMag-std()
-543	fBodyBodyGyroJerkMag-std()
+  *Standard Deviation Variables
+    - 4 tBodyAcc-std()-X
+    - 5 tBodyAcc-std()-Y
+    - 6 tBodyAcc-std()-
+    - 44 tGravityAcc-std()-X
+    - 45 tGravityAcc-std()-Y
+    - 46 tGravityAcc-std()-Z
+    - 84 tBodyAccJerk-std()-X
+    - 85 tBodyAccJerk-std()-Y
+    - 86 tBodyAccJerk-std()-Z
+    - 124 tBodyGyro-std()-X
+    - 125 tBodyGyro-std()-Y
+    - 126 tBodyGyro-std()-Z
+    - 164 tBodyGyroJerk-std()-X
+    - 165 tBodyGyroJerk-std()-Y
+    - 166 tBodyGyroJerk-std()-Z
+    - 202 tBodyAccMag-std()
+    - 215 tGravityAccMag-std()
+    - 228 tBodyAccJerkMag-std()
+    - 241 tBodyGyroMag-std()
+    - 254 tBodyGyroJerkMag-std()
+    - 269 fBodyAcc-std()-X
+    - 270 fBodyAcc-std()-Y
+    - 271 fBodyAcc-std()-Z
+    - 348 fBodyAccJerk-std()-X
+    - 349 fBodyAccJerk-std()-Y
+    - 350 fBodyAccJerk-std()-Z
+    - 427 fBodyGyro-std()-X
+    - 428 fBodyGyro-std()-Y
+    - 429 fBodyGyro-std()-Z
+    - 504 fBodyAccMag-std()
+    - 517 fBodyBodyAccJerkMag-std()
+    - 530 fBodyBodyGyroMag-std()
+    - 543 fBodyBodyGyroJerkMag-std()
+
+samsungAllAggData.txt
+---------------------
+
+All variables are exactly as in the samsungAllData.txt, but they contain summary information (mean) of all corresponding records in the original file.  Aggregation is by subject/activity.
