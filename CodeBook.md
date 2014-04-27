@@ -71,7 +71,7 @@ samsungAllData.txt
     - 560 angle(Y,gravityMean)
     - 561 angle(Z,gravityMean)
 
-  *Standard Deviation Variables
+  * Standard Deviation Variables
     - 4 tBodyAcc-std()-X
     - 5 tBodyAcc-std()-Y
     - 6 tBodyAcc-std()-
